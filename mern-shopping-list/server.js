@@ -13,7 +13,7 @@ const items=require('./routes/api/items');
 app.use(express.json()); // or app.use(bodyParser.json())
 app.use(cors());
 
-//mongodb atlas DB 
+//mongodb atlas DB connection
 const DB=process.env.DATABASE;
 
 mongoose.connect(DB,{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify:false,useCreateIndex:true})
