@@ -6,8 +6,8 @@ const itemSchema=new schema({
         required:true
     },
     date:{
-        type:Date,
-        default:Date.now()
+        type:String,
+        default:(new Date()).toLocaleDateString()
     }
 });
 

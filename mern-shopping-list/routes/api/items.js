@@ -28,8 +28,12 @@ router.delete('/:id',async(request,response)=>{
     ItemModel.findByIdAndDelete(request.params.id)
     .then(res=>response.status(201).json(res))
     .catch(err=>response.status(404).json({status:'Failed'}));
+});
+
+router.put('/:id',async(request,response)=>{
+    ItemModel.findByIdAndUpdate(request.params.id,request.body)
+    .then(res=>response.status(200).json(res))
+    .catch(err=>response.status(404).json({status:'Failed'}));
 })
-
-
 
 module.exports=router;
